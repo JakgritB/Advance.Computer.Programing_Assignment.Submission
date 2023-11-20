@@ -17,7 +17,7 @@ public class PrimitiveDataType {
         System.out.println("Student ID : " + StudentID);
         System.out.println("First Name : " + FisrName);
         System.out.println("Byte Value: " + ByteValue);
-        System.out.println("Short Value:" + ShortValue);
+        System.out.println("Short Value: " + ShortValue);
         System.out.println("Int Value: " + intValue);
         System.out.println("Long Value: " + longValue);
         System.out.println("Float Value: " + floatValue);
