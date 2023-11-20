@@ -24,7 +24,6 @@ public class Patient {
 
         }
         else {     //if input is three argument, it will show patient information
-
             System.out.println("Patient's Name: " + args[0]);
             System.out.println("Age: " + args[1]);
             System.out.println("Gender: " + args[2]);
