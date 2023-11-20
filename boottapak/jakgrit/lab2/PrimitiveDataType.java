@@ -1,5 +1,25 @@
 package boottapak.jakgrit.lab2;
 
+/**
+ * The Primitive Data Type Program:
+ * This program will show Primitive Data Type
+ * The output should be
+ * Student ID : 663040111-9
+ * First Name : Jakgrit
+ * Byte Value: 19
+ * Short Value: 119
+ * Int Value: 401119
+ * Long Value: 30401119
+ * Float Value: 0.119
+ * Double Value: 0.30401119
+ * Char Value: J
+ * Boolean Value: true
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 public class PrimitiveDataType {
     public static void main(String[] args){
         
