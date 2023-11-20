@@ -6,7 +6,7 @@ package boottapak.jakgrit.lab2;
  * and displays patient information.
  * The output should be
  * Patient's name : <patient_name>.
- * Nationality : <patient_age>
+ * Age : <patient_age>
  * Gender : <patient_gender>
  * 
  * Author : Jakgrit Boottapak
