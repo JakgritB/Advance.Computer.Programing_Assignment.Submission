@@ -26,8 +26,13 @@ public class SimpleCalculator {
             int a = Integer.parseInt(args[0]);
             int b = Integer.parseInt(args[1]);
             char op = args[2].charAt(0);
-            if (op == '/' && b == 0){
+            if (op != '+' && op != '-' && op != 'x' && op != '/') {
+                System.err.println("Error: Invalid operator. Please use '+', '-', 'x', or '/'.");
+                System.exit(0);
+            }
+            else if (op == '/' && b == 0){
                 System.err.println("Error: Division by zero is not allowed.");
+                System.exit(0);
             }
             else if (op == '+') {
                 int result = a + b;
