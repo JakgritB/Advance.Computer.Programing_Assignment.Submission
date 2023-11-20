@@ -20,8 +20,9 @@ public class SimpleCalculator {
     public static void main(String[] args) {
         if (args.length != 3) {
             System.err.println("Error: Please provide exactly three arguments.");
+            System.exit(0);
         } 
-        if (args.length == 3) {
+        else if (args.length == 3) {
             int a = Integer.parseInt(args[0]);
             int b = Integer.parseInt(args[1]);
             char op = args[2].charAt(0);
