@@ -1,13 +1,22 @@
 package boottapak.jakgrit.lab3;
 
-import java.util.Scanner;
+import java.util.*;
 
-public class NumberGuessingGame {
+public class NumberGuessingMethodGame {
+    static int answer;
+    final static int MIN = 1;
+    final static int MAX = 20;
+
     public static void main(String[] args) {
-        int min = 1;
-        int max = 20;
-        int answer = min + (int) (Math.random() * ((max - min) + 1));
+        genAnswer();
+        playGame();
+    }
 
+    static void genAnswer() {
+        answer = MIN + (int) (Math.random() * ((MAX - MIN) + 1));
+    }
+
+    static void playGame() {
         System.out.println("Welcome to a number guessing game!");
 
         Scanner userInput = new Scanner(System.in); // Create a Scanner object
@@ -38,7 +47,6 @@ public class NumberGuessingGame {
                 System.out.println("You have tried " + times + " times. You ran out of guesses");
                 System.out.println("The answer is " + answer);
             }
-
         }
         userInput.close();
     }
