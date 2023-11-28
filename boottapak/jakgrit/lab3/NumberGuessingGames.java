@@ -79,6 +79,7 @@ public class NumberGuessingGames {
             playGames();
         } else {
             System.out.print("Thank you for playing our games. Bye");
+            input.close();
         }
     }
 }
