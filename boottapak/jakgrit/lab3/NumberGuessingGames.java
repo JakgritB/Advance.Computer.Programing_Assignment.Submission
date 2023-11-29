@@ -78,6 +78,8 @@ public class NumberGuessingGames {
                 }
                 choice();
                 break;
+            } else if (userAnswer < min || userAnswer > max) {
+                System.out.println("The number must be between " + min + " and " + max);
             } else if (userAnswer < answer) {
                 System.out.println("Try a higher number!");
                 numTries++;
