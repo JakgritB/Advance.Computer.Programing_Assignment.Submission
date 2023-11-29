@@ -1,5 +1,16 @@
 package boottapak.jakgrit.lab3;
 
+/**
+ * This code is simple Number Guessing Game
+ * The game will random number between 1 and 20
+ * and you need to guessing it.
+ * and maximum tries is 5 times
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.Scanner;
 
 public class NumberGuessingGame {

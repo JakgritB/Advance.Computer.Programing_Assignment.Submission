@@ -1,5 +1,29 @@
 package boottapak.jakgrit.lab3;
 
+/** This is improve of Number Guessing Game
+ * in Number Guessing Games you can config
+ * - Min value
+ * - Max value
+ * - Maximum number of tries
+ * 
+ * The game will random number between MIN and MAX
+ * and you need to guessing it
+ * and maximum tries by your configurable,
+ * when the game end you can choose to play again or not,
+ * 
+ * to prevent incorrect values from user
+ * - if user input MAX number less than MIN number
+ * the game will show "The max value must be at least equal to the min value"
+ * and user need to input the new Max number.
+ * - if user input maximum number of tries less than 0
+ * the game will show "The maximum number of tries must be greater than 0"
+ * and user need to input the new maximum number of tries.
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.*;
 
 public class NumberGuessingGames {

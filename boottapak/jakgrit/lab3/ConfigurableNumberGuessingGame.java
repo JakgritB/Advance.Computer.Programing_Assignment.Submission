@@ -1,5 +1,20 @@
 package boottapak.jakgrit.lab3;
 
+/**
+ * This Configurable Number Guessing game you can config
+ * - Min value
+ * - Max value
+ * - Maximum number of tries
+ * 
+ * The game will random number between MIN and MAX
+ * and you need to guessing it
+ * and maximum tries by your configurable.
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.*;
 
 public class ConfigurableNumberGuessingGame {
