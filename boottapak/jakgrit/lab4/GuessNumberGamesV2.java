@@ -3,7 +3,7 @@ package boottapak.jakgrit.lab4;
 import java.util.*;
 
 public class GuessNumberGamesV2 {
-    static int answer, min, max, numTries,maxTries;
+    static int answer, min, max, numTries, maxTries;
     static ArrayList<Integer> playerGuess;
     static Scanner input = new Scanner(System.in);
 
@@ -41,12 +41,12 @@ public class GuessNumberGamesV2 {
         playerGuess = new ArrayList<>();
         numTries = 0;
 
-        while (numTries < maxTries) {
+        while (numTries <= maxTries) {
             System.out.print("Enter an integer between " + min + " and " + max + ":");
             int userAnswer = input.nextInt();
-            playerGuess.add(userAnswer);
 
             if (userAnswer == answer) {
+                playerGuess.add(userAnswer);
                 numTries++;
                 if (numTries == 1) {
                     System.out.println("Congratulation!");
@@ -58,11 +58,20 @@ public class GuessNumberGamesV2 {
                 guessDisplay();
                 break;
             } else if (userAnswer < min || userAnswer > max) {
-                System.out.println("The number must be between " + min + " and " + max);
-            } else if (userAnswer < answer) {
+                while (true) {
+                    System.err.print("Your guess should be in [" + min + "," + max + "]:");
+                    userAnswer = input.nextInt();
+                    if (userAnswer >= min && userAnswer <= max) {
+                        break;
+                    }
+                }
+            } 
+            if (userAnswer < answer && userAnswer >= min && userAnswer <= max) {
+                playerGuess.add(userAnswer);
                 System.out.println("Try a higher number!");
                 numTries++;
-            } else if (userAnswer > answer) {
+            } else if (userAnswer > answer && userAnswer >= min && userAnswer <= max) {
+                playerGuess.add(userAnswer);
                 System.out.println("Try a lower number!");
                 numTries++;
             }
