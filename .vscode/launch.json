@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MatrixOperations",
+            "request": "launch",
+            "mainClass": "boottapak.jakgrit.lab4.MatrixOperations",
+            "projectName": "jakgrit-1119-java-labs_d5117a2b"
+        },
+        {
+            "type": "java",
             "name": "PrimitiveDataType",
             "request": "launch",
             "mainClass": "boottapak.jakgrit.lab2.PrimitiveDataType",
