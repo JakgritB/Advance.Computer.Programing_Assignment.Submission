@@ -161,5 +161,6 @@ public class GuessNumberGamesV3 {
         } else {
             System.out.println("High Score (Least Guesses): " + numTriesList.get(0));
         }
+        System.exit(0);
     }
 }

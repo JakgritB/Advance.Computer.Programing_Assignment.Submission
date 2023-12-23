@@ -65,7 +65,7 @@ public class GuessNumberGamesV2 {
                         break;
                     }
                 }
-            } 
+            }
             if (userAnswer < answer && userAnswer >= min && userAnswer <= max) {
                 playerGuess.add(userAnswer);
                 System.out.println("Try a higher number!");
@@ -94,6 +94,7 @@ public class GuessNumberGamesV2 {
         } else {
             System.out.print("Thank you for playing our games. Bye");
             input.close();
+            System.exit(0);
         }
     }
 

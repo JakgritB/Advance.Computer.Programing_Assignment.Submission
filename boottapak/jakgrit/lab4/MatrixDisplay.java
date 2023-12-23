@@ -9,7 +9,6 @@ public class MatrixDisplay {
 
     public static void main(String[] args) {
         configure();
-        matrix();
     }
 
     static void configure() {
@@ -31,6 +30,7 @@ public class MatrixDisplay {
                 System.out.println("columns must be greater than 0. Please try again.");
             }
         }
+        matrix();
     }
 
     static void matrix() {
@@ -50,5 +50,6 @@ public class MatrixDisplay {
             }
             System.out.println();
         }
+        configure();
     }
 }
