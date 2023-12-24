@@ -1,8 +1,32 @@
 package boottapak.jakgrit.lab4;
 
+/** This program is create matrix program
+ * - User can specify the dimensions of the matrix
+ *      - Specify the rows
+ *      - specify the columns
+ *      - Rows and columns must be greater than 0
+ * - User can input its element from top-left corner to the bottom-right corner
+ * - The program will display the complete matrix that create by user
+ * 
+ * The example of program:
+ * Enter the number of rows: 2
+ * Enter the number of columns: 2
+ * Enter element [0][0]: 1
+ * Enter element [0][1]: 2
+ * Enter element [1][0]: 3
+ * Enter element [1][1]: 4
+ * Displaying Matrix:
+ * 1 2
+ * 3 4
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.*;
 
-public class MatrixDisplay {
+public class DisplayMatrix {
     static int rows, columns;
     static int matrix[][];
     static Scanner input = new Scanner(System.in);
@@ -18,7 +42,7 @@ public class MatrixDisplay {
             if (rows > 0) {
                 break;
             } else {
-                System.out.println("rows must be greater than 0. Please try again.");
+                System.err.println("rows must be greater than 0. Please try again.");
             }
         }
         while (true) {
@@ -27,7 +51,7 @@ public class MatrixDisplay {
             if (columns > 0) {
                 break;
             } else {
-                System.out.println("columns must be greater than 0. Please try again.");
+                System.err.println("columns must be greater than 0. Please try again.");
             }
         }
         matrix();

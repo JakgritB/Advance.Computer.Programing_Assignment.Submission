@@ -1,5 +1,20 @@
 package boottapak.jakgrit.lab4;
 
+/** This is improve of NumberGuessingGames from lab 3
+ * In Number Guessing Games The added features are
+ * - Player has options to review their guesses when finish the game
+ *      - 'a' option is display all guesses that made by player
+ *      - 'g' option is display the guesses that player choose to view
+ *      - Exit option will exit the review program by press any other key
+ * 
+ * - New message format when player win the game
+ * - New message format when player enters a guess outside the min and max
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.*;
 
 public class GuessNumberGamesV2 {
@@ -19,14 +34,14 @@ public class GuessNumberGamesV2 {
         System.out.print("Enter the max value:");
         max = input.nextInt();
         while (min > max) {
-            System.out.println("The max value must be at least equal to the min value");
+            System.err.println("The max value must be at least equal to the min value");
             System.out.print("Enter the max value:");
             max = input.nextInt();
         }
         System.out.print("Enter the maximum number of tries:");
         maxTries = input.nextInt();
         while (maxTries <= 0) {
-            System.out.println("The maximum number of tries must be greater than 0");
+            System.err.println("The maximum number of tries must be greater than 0");
             System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
         }
@@ -48,13 +63,7 @@ public class GuessNumberGamesV2 {
             if (userAnswer == answer) {
                 playerGuess.add(userAnswer);
                 numTries++;
-                if (numTries == 1) {
-                    System.out.println("Congratulation!");
-                    System.out.println("You have tried " + numTries + " time");
-                } else {
-                    System.out.println("Congratulation!");
-                    System.out.println("You have tried " + numTries + " times");
-                }
+                System.out.println("Congratulations!");
                 guessDisplay();
                 break;
             } else if (userAnswer < min || userAnswer > max) {
@@ -76,8 +85,8 @@ public class GuessNumberGamesV2 {
                 numTries++;
             }
             if (numTries == maxTries && userAnswer != answer) {
-                System.out.println("You have tried " + numTries + " times. You ran out of guesses");
-                System.out.println("The answer is " + answer);
+                System.out.print("You ran out of guesses. ");
+                System.out.println("The answer was " + answer);
                 guessDisplay();
                 break;
             }
@@ -113,7 +122,7 @@ public class GuessNumberGamesV2 {
             } else if (choiceInput.equals("g")) {
                 System.out.print("Enter the number of the guess you want to see (1-" + numTries + "):");
                 guessPlayerWant = input.nextInt();
-                System.out.print("Guess " + guessPlayerWant + ":");
+                System.out.print("Guess " + guessPlayerWant + ": ");
                 System.out.println(playerGuess.get(guessPlayerWant - 1));
             } else {
                 choice();

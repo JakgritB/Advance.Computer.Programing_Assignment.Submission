@@ -1,8 +1,62 @@
 package boottapak.jakgrit.lab4;
 
+/** This program is improve of DisplayMatrix
+ * In MatrixDisplayOptions The added features are
+ * - User can choose the menu in various ways
+ *      - User Input Matrix
+ *      - Random Matrix (0-9)
+ *      - All Zero Matrix
+ *      - All Ones Matrix
+ *      - Diagonal Matrix
+ * 
+ * - "User Input" menu is similar to MatrixDisplay program,
+ *   user can specify the dimensions of matrix and input each element
+ *      - The example of output:
+ *      Displaying matrix:
+ *      1 2 3
+ *      4 5 6
+ *      7 8 9
+ * 
+ * - "Random Matrix" menu is user can specify the dimensions of matrix
+ *   and program will random number between 0-9 and fill in the matrix
+ *      - The example of output:
+ *      Displaying matrix:
+ *      3 0 4
+ *      8 6 6
+ *      9 4 2
+ * 
+ * - "All Zero Matrix" menu is user can specify the dimensions of matrix
+ *   and program will fill all element in matrix to number 0
+ *      - The example of output:
+ *      Displaying matrix:
+ *      0 0 0
+ *      0 0 0
+ *      0 0 0
+ * 
+ * - "All Ones Matrix" menu is user can specify the dimensions of matrix
+ *   and program will fill all element in matrix to number 1
+ *      - The example of output:
+ *      Displaying matrix:
+ *      1 1 1
+ *      1 1 1
+ *      1 1 1
+ * 
+ * - "Diagonal Matrix" menu is user can specify the dimensions of matrix, but the matrix is squre
+ *   and program will create a squre matrix with 0, except for 1 on diagonal
+ *      - The example of output:
+ *      Displaying matrix:
+ *      1 0 0
+ *      0 1 0
+ *      0 0 1
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.*;
 
-public class MatrixDisplayOptions {
+public class DisplayMatrixOptions {
     static int rows, columns, square, menu, number;
     static int min = 0, max = 9;
     static int matrix[][];
@@ -16,19 +70,17 @@ public class MatrixDisplayOptions {
         System.out.println("Select matrix initialization method:");
         System.out.println("1. User Input \n2. Random Numbers \n3. All Zeros \n4. All Ones \n5. Diagonal Matrix");
         System.out.print("Enter choice (1-5): ");
-        while (true) {
+        menu = input.nextInt();
+        while (menu < 1 || menu > 5) {
+            System.err.print("Please enter the number between 1-5 :");
             menu = input.nextInt();
-            if (menu < 1 || menu > 5) {
-                System.err.println("Please enter the number between 1-5 ");
-            } else if (menu == 5) {
-                System.out.print("Enter the number of rows and columns for diagonal matrix: ");
-                square = input.nextInt();
-                matrixDiagonal();
-                break;
-            } else {
-                configure();
-                break;
-            }
+        }
+        if (menu == 5) {
+            System.out.print("Enter the number of rows and columns for diagonal matrix: ");
+            square = input.nextInt();
+            matrixDiagonal();
+        } else {
+            configure();
         }
     }
 
@@ -39,7 +91,7 @@ public class MatrixDisplayOptions {
             if (rows > 0) {
                 break;
             } else {
-                System.out.println("rows must be greater than 0. Please try again.");
+                System.err.println("rows must be greater than 0. Please try again.");
             }
         }
         while (true) {
@@ -48,7 +100,7 @@ public class MatrixDisplayOptions {
             if (columns > 0) {
                 break;
             } else {
-                System.out.println("columns must be greater than 0. Please try again.");
+                System.err.println("columns must be greater than 0. Please try again.");
             }
         }
         menuSelect();
@@ -107,11 +159,13 @@ public class MatrixDisplayOptions {
         columns = square;
         matrix = new int[rows][columns];
         // matrix diagonal
+        // create matrix all 0 first
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 matrix[i][j] = 0;
             }
         }
+        // add 1 to diagonal
         for (int a = 0, b = 0; a < rows && b < columns; a++, b++) {
             matrix[a][b] = 1;
         }

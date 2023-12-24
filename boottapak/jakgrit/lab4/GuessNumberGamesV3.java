@@ -1,5 +1,43 @@
 package boottapak.jakgrit.lab4;
 
+/** This is advanced version of GuessNumberGamesV2
+ * In Number Guessing Games The added features are
+ * - When the round is over, it will show game log:
+ *      - Answer
+ *      - Number of guesses
+ *      - Win/Loss status
+ * 
+ *  The output example: Game log: Answer: 1, Guesses: 3, Win: true
+ * 
+ * - When played the game many times, the game will save information, 
+ *   and display the statistical information:
+ *      - Total games played
+ *      - Total wins
+ *      - Win ratio
+ *      - Average guess per game
+ *      - High Score (Least Guesses)
+ * 
+ *  The output example:
+ *  ----- Game Statistics -----
+ *  Total games played: 4
+ *  Total wins: 1
+ *  Win Ratio: 25.0%
+ *  Average guess per game: 3.0
+ *  High Score (Least Guesses): 3
+ *  
+ *  But when player did not win any game. it will show like this:
+ *  ----- Game Statistics -----
+ *  Total games played: 1
+ *  Total wins: 0
+ *  Win Ratio: 0.0%
+ *  Average guess per game: 3.0
+ *  High Score (Least Guesses): N/A
+ * 
+ * Author : Jakgrit Boottapak
+ * ID : 663040111-9
+ * Sec : 1
+ */
+
 import java.util.*;
 
 public class GuessNumberGamesV3 {
@@ -23,14 +61,14 @@ public class GuessNumberGamesV3 {
         System.out.print("Enter the max value:");
         max = input.nextInt();
         while (min > max) {
-            System.out.println("The max value must be at least equal to the min value");
+            System.err.println("The max value must be at least equal to the min value");
             System.out.print("Enter the max value:");
             max = input.nextInt();
         }
         System.out.print("Enter the maximum number of tries:");
         maxTries = input.nextInt();
         while (maxTries <= 0) {
-            System.out.println("The maximum number of tries must be greater than 0");
+            System.err.println("The maximum number of tries must be greater than 0");
             System.out.print("Enter the maximum number of tries:");
             maxTries = input.nextInt();
         }
@@ -56,13 +94,7 @@ public class GuessNumberGamesV3 {
                 playerGuess.add(userAnswer);
                 totalWins++;
                 numTries++;
-                if (numTries == 1) {
-                    System.out.println("Congratulation!");
-                    System.out.println("You have tried " + numTries + " time");
-                } else {
-                    System.out.println("Congratulation!");
-                    System.out.println("You have tried " + numTries + " times");
-                }
+                System.out.println("Congratulations!");
                 allTries = allTries + numTries;
                 numTriesList.add(numTries);
                 guessDisplay();
@@ -88,8 +120,8 @@ public class GuessNumberGamesV3 {
             if (numTries == maxTries && userAnswer != answer) {
                 winStatus = false;
                 totalLoses++;
-                System.out.println("You have tried " + numTries + " times. You ran out of guesses");
-                System.out.println("The answer is " + answer);
+                System.out.print("You ran out of guesses. ");
+                System.out.println("The answer was " + answer);
                 allTries = allTries + numTries;
                 numTriesList.add(numTries);
                 guessDisplay();
@@ -126,7 +158,7 @@ public class GuessNumberGamesV3 {
             } else if (choiceInput.equals("g")) {
                 System.out.print("Enter the number of the guess you want to see (1-" + numTries + "):");
                 guessPlayerWant = input.nextInt();
-                System.out.print("Guess " + guessPlayerWant + ":");
+                System.out.print("Guess " + guessPlayerWant + ": ");
                 System.out.println(playerGuess.get(guessPlayerWant - 1));
             } else {
                 gameLog();
@@ -152,9 +184,11 @@ public class GuessNumberGamesV3 {
         } else {
             winRate = ((float) totalWins / (float) totalGames) * 100;
         }
-        System.out.println("Win Ratio: " + winRate + "%");
+        System.out.printf("Win Ratio: %s", String.format("%.1f", winRate) + "%");
+        System.out.println();
         avgGuess = allTries / totalGames;
-        System.out.println("Average guess per game: " + avgGuess);
+        System.out.printf("Average guess per game: %s", String.format("%.1f", avgGuess));
+        System.out.println();
         Collections.sort(numTriesList);
         if (totalWins == 0) {
             System.out.println("High Score (Least Guesses): " + "N/A");
