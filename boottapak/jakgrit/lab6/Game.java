@@ -8,13 +8,13 @@ public abstract class Game {
     Scanner input;
 
     public Game() {
-        gameName = "unknown game";
-        numOfPlayers = 0;
+        setName("unknown game");
+        setNumOfPlayers(0);
     }
 
     public Game(String gameName, int numOfPlayers) {
-        this.gameName = gameName;
-        this.numOfPlayers = numOfPlayers;
+        setName(gameName);
+        setNumOfPlayers(numOfPlayers);
     }
 
     public String getName() {
@@ -34,7 +34,7 @@ public abstract class Game {
     }
 
     public String toString() {
-        return "{ gameName='" + gameName + "', numOfPlayer='" + numOfPlayers + "'}";
+        return "{ gameName='" + getName() + "', numOfPlayer='" + getNumOfPlayers() + "'} ";
     }
 
     public abstract void playGame();

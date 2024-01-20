@@ -7,25 +7,25 @@ public class GuessNumberGameVer1 extends Game {
 
     public GuessNumberGameVer1() {
         super("Guess Number Game", 1);
-        this.minNum = 1;
-        this.maxNum = 10;
-        this.maxTries = 3;
+        this.setMinNum(1);
+        this.setMaxNum(10);
+        this.setMaxTries(3);
         this.correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
     }
 
     public GuessNumberGameVer1(int minNum, int maxNum) {
         super("Guess Number Game", 1);
-        this.minNum = minNum;
-        this.maxNum = maxNum;
-        this.maxTries = 3;
+        this.setMinNum(minNum);
+        this.setMaxNum(maxNum);
+        this.setMaxTries(3);
         this.correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
     }
 
     public GuessNumberGameVer1(int minNum, int maxNum, int maxTries) {
         super("Guess Number Game", 1);
-        this.minNum = minNum;
-        this.maxNum = maxNum;
-        this.maxTries = maxTries;
+        this.setMinNum(minNum);
+        this.setMaxNum(maxNum);
+        this.setMaxTries(maxTries);
         this.correctNum = minNum + (int) (Math.random() * ((maxNum - minNum) + 1));
     }
 
@@ -61,7 +61,7 @@ public class GuessNumberGameVer1 extends Game {
     @Override
     public String toString() {
         System.out.print(super.toString());
-        return "{ minNum='" + minNum + "', maxNum='" + maxNum + "', correctNum='" + correctNum +
-        "', maxTries='" + maxTries + "'}";
+        return "{ minNum='" + getMinNum() + "', maxNum='" + getMaxNum() + "', correctNum='" + correctNum +
+                "', maxTries='" + getMaxTries() + "'}";
     }
 }

@@ -5,14 +5,14 @@ public class RockPaperScissorGame extends Game {
 
     public RockPaperScissorGame() {
         super("Rock Paper Scissor", 2);
-        player1Choice = "rock";
-        player2Choice = "rock";
+        this.setPlayer1Choice("rock");
+        this.setPlayer2Choice("rock");
     }
 
     public RockPaperScissorGame(String player1Choice, String player2Choice) {
         super("Rock Paper Scissor", 2);
-        this.player1Choice = player1Choice;
-        this.player2Choice = player2Choice;
+        this.setPlayer1Choice(player1Choice);
+        this.setPlayer2Choice(player2Choice);
     }
 
     public String getPlayer1Choice() {
@@ -33,12 +33,12 @@ public class RockPaperScissorGame extends Game {
 
     @Override
     public String toString() {
-        return super.toString();
+        System.out.print(super.toString());
+        return "{, player1Choice='" + getPlayer1Choice() + "', player2Choice='" + getPlayer2Choice() + "'}";
     }
-
 
     @Override
     public void playGame() {
-        
+        System.out.println("Playing Rock Paper Scissor Game");
     }
 }
