@@ -1,5 +1,17 @@
 package boottapak.jakgrit.lab6;
 
+/*  TestGame3
+ *  This is the test program to test PokerGame, DungeonsAndDragonsGame.
+ *  
+ *  - test constructor that has no parameter and has parameter
+ *  - print information from each game
+ *  - test method play game, gameRule, setUpBoard, rollDice
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class TestGame3 {
     public static void main(String[] args) {
         // CardGame game1 = new CardGame();

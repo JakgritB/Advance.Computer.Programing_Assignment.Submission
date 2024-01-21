@@ -1,5 +1,18 @@
 package boottapak.jakgrit.lab6;
 
+/*  TestGames2
+ *  This is the test program to test GuessNumberGameVer2,
+ *      RockPaperScissorGameVer2 and MonopolyGameVer2.
+ *  
+ *  - test constructor that has no parameter and has parameter
+ *  - print information from each game
+ *  - test method play game, gameRule, setUpBoard, rollDice
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class TestGames2 {
     public static void main(String[] args) {
         GuessNumberGameVer2 game1 = new GuessNumberGameVer2();
