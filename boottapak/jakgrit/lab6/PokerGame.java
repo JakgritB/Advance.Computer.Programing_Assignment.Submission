@@ -7,10 +7,10 @@ public class PokerGame extends CardGame implements HasRule {
         this.setNumOfPlayers(4);
     }
 
-    public PokerGame(int numOfPlayers) {
-        super(5);
+    public PokerGame(int numOfCardsPerPlayer) {
+        super(numOfCardsPerPlayer);
         this.setName("Poker Game");
-        this.setNumOfPlayers(numOfPlayers);
+        this.setNumOfPlayers(4);
     }
 
     public void gameRule() {
@@ -24,6 +24,7 @@ public class PokerGame extends CardGame implements HasRule {
 
     @Override
     public String toString() {
+        System.out.print("Poker Game : ");
         return super.toString();
     }
 }

@@ -33,6 +33,7 @@ public abstract class Game {
         this.numOfPlayers = numOfPlayers;
     }
 
+    @Override
     public String toString() {
         return "{ gameName='" + getName() + "', numOfPlayer='" + getNumOfPlayers() + "'} ";
     }

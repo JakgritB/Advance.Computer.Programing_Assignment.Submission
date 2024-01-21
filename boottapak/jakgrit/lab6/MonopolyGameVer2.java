@@ -11,7 +11,7 @@ public class MonopolyGameVer2 extends MonopolyGame implements HasRule, UseBoard,
     }
 
     public void gameRule() {
-        System.out.println("Monopoly Game Rules : ...");
+        System.out.println("Monopoly Rules : ...");
     }
 
     public void setUpBoard() {
@@ -24,7 +24,7 @@ public class MonopolyGameVer2 extends MonopolyGame implements HasRule, UseBoard,
 
     @Override
     public void playGame() {
-        System.out.println("Playing Monopoly Game Version 2");
+        System.out.println("Play Monopoly Game Version 2");
     }
 
     @Override

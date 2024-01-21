@@ -4,13 +4,13 @@ public class RockPaperScissorGame extends Game {
     protected String player1Choice, player2Choice;
 
     public RockPaperScissorGame() {
-        super("Rock Paper Scissor", 2);
+        super("Rock Paper Scissor Game", 2);
         this.setPlayer1Choice("rock");
         this.setPlayer2Choice("rock");
     }
 
     public RockPaperScissorGame(String player1Choice, String player2Choice) {
-        super("Rock Paper Scissor", 2);
+        super("Rock Paper Scissor Game", 2);
         this.setPlayer1Choice(player1Choice);
         this.setPlayer2Choice(player2Choice);
     }

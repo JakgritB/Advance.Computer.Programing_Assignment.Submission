@@ -11,12 +11,12 @@ public class RockPaperScissorGameVer2 extends RockPaperScissorGame implements Ha
     }
 
     public void gameRule() {
-        System.out.println("Rock Paper Scissor Game Rules : ...");
+        System.out.println("Rock Paper Scissor Rules : ...");
     }
 
     @Override
     public void playGame() {
-        System.out.println("Playing Rock Paper Scissor Game Version 2");
+        System.out.println("Playing Rock Paper Scissor Version 2");
     }
 
     @Override
