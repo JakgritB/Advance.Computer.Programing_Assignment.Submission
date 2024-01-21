@@ -35,5 +35,4 @@ public class MonopolyGame extends Game {
     public void playGame() {
         System.out.println("Playing Monopoly Game");
     }
-
 }

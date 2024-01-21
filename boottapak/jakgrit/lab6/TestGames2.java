@@ -30,5 +30,4 @@ public class TestGames2 {
         game7 = new MonopolyGameVer2();
         System.out.println(game7);
     }
-
 }
