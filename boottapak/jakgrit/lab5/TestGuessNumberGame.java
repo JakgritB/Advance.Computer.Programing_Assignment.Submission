@@ -60,6 +60,6 @@ public class TestGuessNumberGame {
     // main method // you can called any method in this main method and run to test
     // You can change method you want to test here:
     public static void main(String[] args) {
-
+        testPlayGamesStats();
     }
 }

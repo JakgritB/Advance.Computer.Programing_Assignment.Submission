@@ -37,19 +37,19 @@ public class GuessNumberGameVer2 extends GuessNumberGameVer1 {
     protected int MAX_GUESSES = 20;
 
     // Default constructor
-    GuessNumberGameVer2() {
+    public GuessNumberGameVer2() {
         super();
         guesses = new int[MAX_GUESSES];
     }
 
     // Constructor with two parameters
-    GuessNumberGameVer2(int minNum, int maxNum) {
+    public GuessNumberGameVer2(int minNum, int maxNum) {
         super(minNum, maxNum);
         guesses = new int[MAX_GUESSES];
     }
 
     // Constructor with three parameters
-    GuessNumberGameVer2(int minNum, int maxNum, int maxTries) {
+    public GuessNumberGameVer2(int minNum, int maxNum, int maxTries) {
         super(minNum, maxNum, maxTries);
         guesses = new int[MAX_GUESSES];
     }

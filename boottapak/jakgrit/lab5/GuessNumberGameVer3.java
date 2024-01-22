@@ -30,17 +30,17 @@ package boottapak.jakgrit.lab5;
 public class GuessNumberGameVer3 extends GuessNumberGameVer2 {
 
     // Default constructor
-    GuessNumberGameVer3() {
+    public GuessNumberGameVer3() {
         super();
     }
 
     // Constructor with two parameters
-    GuessNumberGameVer3(int minNum, int maxNum) {
+    public GuessNumberGameVer3(int minNum, int maxNum) {
         super(minNum, maxNum);
     }
 
     // Constructor with three parameters
-    GuessNumberGameVer3(int minNum, int maxNum, int maxTries) {
+    public GuessNumberGameVer3(int minNum, int maxNum, int maxTries) {
         super(minNum, maxNum, maxTries);
     }
 
