@@ -1,5 +1,15 @@
 package boottapak.jakgrit.lab7;
 
+/*  TestGuessNumberGameVer4
+ *  This is the test program to test GuessNumberGameVer4
+ *     
+ *  - test new format toString method
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class TestGuessNumberGameVer4 {
     public static void main(String[] args) {
         test1();

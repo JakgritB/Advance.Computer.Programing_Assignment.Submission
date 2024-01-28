@@ -3,39 +3,58 @@ package boottapak.jakgrit.lab7;
 import javax.swing.*;
 import java.awt.*;
 
+/*  This program is MySimpleWindow that extends JFrame. 
+ *  
+ *  the title is "My Simple Window"
+ *  this program creating a simple window 
+ *  and has Reset and Submit button
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class MySimpleWindow extends JFrame {
     protected JPanel buttonPanel;
     protected JPanel mainPanel = new JPanel();
     protected JButton resetButton, submitButton;
 
+    // this is constructure to create JFrame and add title
     protected MySimpleWindow(String title) {
         super(title);
     }
 
     protected void addResetAndSubmitBotton() {
+        // create button
         resetButton = new JButton("Reset");
         submitButton = new JButton("Submit");
 
+        // create button panel and add button to panel
         buttonPanel = new JPanel();
         buttonPanel.add(resetButton);
         buttonPanel.add(submitButton);
 
-        // you need to add "buttonPanel" when call this method
+        // NOTE : You need to add "buttonPanel" when call this method
+
+        // ex:
+        // addResetAndSubmitBotton();
+        // mainPanel.add(buttonPanel);
     }
 
     protected void addComponents() {
         addResetAndSubmitBotton();
         mainPanel.add(buttonPanel);
+
         mainPanel.setLayout(new FlowLayout(0, 60, 0));
 
-        add(mainPanel);
+        add(mainPanel); // Add the main panel to the JFrame
     }
 
     protected void setFrameFeatures() {
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
     }
 
     public static void createAndShowGUI() {

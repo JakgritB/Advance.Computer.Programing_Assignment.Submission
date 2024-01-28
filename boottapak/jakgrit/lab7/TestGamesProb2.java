@@ -3,6 +3,18 @@ package boottapak.jakgrit.lab7;
 import java.util.ArrayList;
 import java.util.Collections;;
 
+/*  TestGamesProb2
+ *  This is the test program to test GuessNumberGameVer4
+ *     
+ *  - test unsorted games
+ *  - test sorted games by max tries and range
+ *  - print result
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class TestGamesProb2 {
     static ArrayList<GuessNumberGameVer4> games = new ArrayList<GuessNumberGameVer4>();
 
