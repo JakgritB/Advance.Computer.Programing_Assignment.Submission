@@ -1,6 +1,7 @@
 package boottapak.jakgrit.lab7;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /*  This program is PlayerFormV1 that extends MySimpleWindow. 
@@ -84,6 +85,8 @@ public class PlayerFormV1 extends MySimpleWindow {
         super.addComponents();
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
         mainPanel.add(addPlayerInfoInput(), 0);
+
+        mainPanel.setBorder(new EmptyBorder(5, 5, 0, 5));
     }
 
     public static void createAndShowGUI() {

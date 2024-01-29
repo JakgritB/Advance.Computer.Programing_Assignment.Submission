@@ -48,15 +48,10 @@ public class PlayerFormV3 extends PlayerFormV2 {
     protected void addMenus() {
         menuBar = new JMenuBar();
 
-        menuBar.add(addFileMenu());
-        menuBar.add(addConfigMenu());
+        menuBar.add(addFileMenu(), 0);
+        menuBar.add(addConfigMenu(), 1);
 
         setJMenuBar(menuBar);
-    }
-
-    @Override
-    protected void addComponents() {
-        super.addComponents();
     }
 
     public static void createAndShowGUI() {
