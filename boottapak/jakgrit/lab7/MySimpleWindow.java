@@ -45,7 +45,7 @@ public class MySimpleWindow extends JFrame {
         add(mainPanel); // Add the main panel to the JFrame
     }
 
-    protected void setFrameFeatures() {
+    public void setFrameFeatures() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);

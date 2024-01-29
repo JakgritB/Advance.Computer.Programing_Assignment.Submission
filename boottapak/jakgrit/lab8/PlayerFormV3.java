@@ -17,16 +17,20 @@ public class PlayerFormV3 extends PlayerFormV2 {
         super(title);
     }
 
-    protected void addMenus() {
-        menuBar = new JMenuBar();
+    protected JMenu addFileMenu() {
         fileMenu = new JMenu("File");
-        configMenu = new JMenu("Config");
 
         fileMenu.add(newMenuItem = new JMenuItem("New"));
         fileMenu.add(openMenuItem = new JMenuItem("Open"));
         fileMenu.add(saveMenuItem = new JMenuItem("Save"));
         fileMenu.addSeparator();
         fileMenu.add(exitMenuItem = new JMenuItem("Exit"));
+
+        return fileMenu;
+    }
+
+    protected JMenu addConfigMenu() {
+        configMenu = new JMenu("Config");
 
         configMenu.add(colorMenuItem = new JMenu("Color"));
         configMenu.add(sizeMenuItem = new JMenu("Size"));
@@ -39,8 +43,14 @@ public class PlayerFormV3 extends PlayerFormV2 {
         sizeMenuItem.add(size20MenuItem = new JMenuItem("20"));
         sizeMenuItem.add(size24MenuItem = new JMenuItem("24"));
 
-        menuBar.add(fileMenu);
-        menuBar.add(configMenu);
+        return configMenu;
+    }
+
+    protected void addMenus() {
+        menuBar = new JMenuBar();
+
+        menuBar.add(addFileMenu());
+        menuBar.add(addConfigMenu());
 
         add(menuBar, BorderLayout.NORTH);
     }
