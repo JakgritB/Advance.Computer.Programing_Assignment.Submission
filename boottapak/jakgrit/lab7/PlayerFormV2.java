@@ -28,7 +28,7 @@ public class PlayerFormV2 extends PlayerFormV1 {
         super(title);
     }
 
-    protected void addPlayerType() {
+    protected JPanel addPlayerType() {
         // create label and ComboBox(Select box)
         playerTypeLabel = new JLabel("Player Type:");
 
@@ -45,14 +45,10 @@ public class PlayerFormV2 extends PlayerFormV1 {
         playerTypePanel.add(playerTypeLabel);
         playerTypePanel.add(playerTypeComboBox);
 
-        // NOTE : You need to add "playerTypePanel" when call this method
-
-        // ex:
-        // addPlayerType();
-        // mainPanel.add(playerTypePanel);
+        return playerTypePanel;
     }
 
-    protected void addNote() {
+    protected JPanel addNote() {
         // create label and text area
         noteLabel = new JLabel("Note:");
         noteTxtArea = new JTextArea(3, 35);
@@ -72,28 +68,20 @@ public class PlayerFormV2 extends PlayerFormV1 {
         notePanel.add(noteLabel);
         notePanel.add(scrollPane);
 
-        // NOTE : You need to add "notePanel" when call this method
-
-        // ex:
-        // addNote();
-        // mainPanel.add(notePanel);
+        return notePanel;
     }
 
     @Override
     protected void addComponents() {
         mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
 
-        addPlayerInfoInput();
-        mainPanel.add(playerInfoPanel);
+        mainPanel.add(addPlayerInfoInput());
 
-        addPlayerType();
-        mainPanel.add(playerTypePanel);
+        mainPanel.add(addPlayerType());
 
-        addNote();
-        mainPanel.add(notePanel);
+        mainPanel.add(addNote());
 
-        addResetAndSubmitBotton();
-        mainPanel.add(buttonPanel);
+        mainPanel.add(addResetAndSubmitBotton());
 
         add(mainPanel); // Add the main panel to the JFrame
     }

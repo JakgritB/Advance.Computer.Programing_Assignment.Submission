@@ -31,7 +31,7 @@ public class PlayerFormV1 extends MySimpleWindow {
         super(title);
     }
 
-    protected void addGenderButtons() {
+    protected JPanel addGenderButtons() {
         // create ButtonGroup and gender button
         genderButtonGroup = new ButtonGroup();
         maleButton = new JRadioButton("Male");
@@ -46,10 +46,10 @@ public class PlayerFormV1 extends MySimpleWindow {
         genderButtonGroup.add(maleButton);
         genderButtonGroup.add(femaleButton);
 
-        // NOTE : You need to add "genderButtonPanel" when call this method
+        return genderButtonPanel;
     }
 
-    protected void addPlayerInfoInput() {
+    protected JPanel addPlayerInfoInput() {
         // create label and text field(have 1 line)
         nameLabel = new JLabel("Name:");
         nameTxtField = new JTextField(txtFieldLength);
@@ -76,22 +76,17 @@ public class PlayerFormV1 extends MySimpleWindow {
         // set layout
         playerInfoPanel.setLayout(new GridLayout(4, 2, 10, 5));
 
-        // NOTE : You need to add "playerInfoPanel" when call this method
-
-        // ex:
-        // addPlayerInfoInput();
-        // mainPanel.add(playerInfoPanel);
+        return playerInfoPanel;
     }
 
     @Override
     protected void addComponents() {
         mainPanel.setLayout(new BorderLayout());
 
-        addPlayerInfoInput();
-        mainPanel.add(playerInfoPanel, BorderLayout.NORTH);
+        // addPlayerInfoInput();
+        mainPanel.add(addPlayerInfoInput(), BorderLayout.NORTH);
 
-        super.addResetAndSubmitBotton();
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+        mainPanel.add(super.addResetAndSubmitBotton(), BorderLayout.SOUTH);
 
         add(mainPanel); // Add the main panel to the JFrame
     }

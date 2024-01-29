@@ -24,7 +24,7 @@ public class MySimpleWindow extends JFrame {
         super(title);
     }
 
-    protected void addResetAndSubmitBotton() {
+    protected JPanel addResetAndSubmitBotton() {
         // create button
         resetButton = new JButton("Reset");
         submitButton = new JButton("Submit");
@@ -34,16 +34,11 @@ public class MySimpleWindow extends JFrame {
         buttonPanel.add(resetButton);
         buttonPanel.add(submitButton);
 
-        // NOTE : You need to add "buttonPanel" when call this method
-
-        // ex:
-        // addResetAndSubmitBotton();
-        // mainPanel.add(buttonPanel);
+        return buttonPanel;
     }
 
     protected void addComponents() {
-        addResetAndSubmitBotton();
-        mainPanel.add(buttonPanel);
+        mainPanel.add(addResetAndSubmitBotton());
 
         mainPanel.setLayout(new FlowLayout(0, 60, 0));
 
