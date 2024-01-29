@@ -1,6 +1,7 @@
 package boottapak.jakgrit.lab7;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 /*  This program is PlayerFormV2 that extends PlayerFormV1. 
@@ -42,6 +43,7 @@ public class PlayerFormV2 extends PlayerFormV1 {
         // create panel and add label,combobox to panel
         playerTypePanel = new JPanel();
         playerTypePanel.setLayout(new GridLayout(1, 2));
+        playerTypePanel.setBorder(new EmptyBorder(5, 0, 0, 0));
         playerTypePanel.add(playerTypeLabel);
         playerTypePanel.add(playerTypeComboBox);
 
@@ -73,17 +75,10 @@ public class PlayerFormV2 extends PlayerFormV1 {
 
     @Override
     protected void addComponents() {
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
+        super.addComponents();
 
-        mainPanel.add(addPlayerInfoInput());
-
-        mainPanel.add(addPlayerType());
-
-        mainPanel.add(addNote());
-
-        mainPanel.add(addResetAndSubmitBotton());
-
-        add(mainPanel); // Add the main panel to the JFrame
+        mainPanel.add(addPlayerType(), 1);
+        mainPanel.add(addNote(), 2);
     }
 
     public static void createAndShowGUI() {

@@ -3,17 +3,16 @@ package boottapak.jakgrit.lab8;
 import boottapak.jakgrit.lab7.PlayerFormV2;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class PlayerFormV3 extends PlayerFormV2 {
-    JMenuBar menuBar;
-    JMenu fileMenu, configMenu;
-    JMenuItem newMenuItem, openMenuItem, saveMenuItem, exitMenuItem;
-    JMenu colorMenuItem, sizeMenuItem;
-    JMenuItem redMenuItem, greenMenuItem, blueMenuItem;
-    JMenuItem size16MenuItem, size20MenuItem, size24MenuItem;
+    protected JMenuBar menuBar;
+    protected JMenu fileMenu, configMenu;
+    protected JMenuItem newMenuItem, openMenuItem, saveMenuItem, exitMenuItem;
+    protected JMenu colorMenuItem, sizeMenuItem;
+    protected JMenuItem redMenuItem, greenMenuItem, blueMenuItem;
+    protected JMenuItem size16MenuItem, size20MenuItem, size24MenuItem;
 
-    PlayerFormV3(String title) {
+    protected PlayerFormV3(String title) {
         super(title);
     }
 
@@ -52,22 +51,12 @@ public class PlayerFormV3 extends PlayerFormV2 {
         menuBar.add(addFileMenu());
         menuBar.add(addConfigMenu());
 
-        add(menuBar, BorderLayout.NORTH);
+        setJMenuBar(menuBar);
     }
 
     @Override
     protected void addComponents() {
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
-
-        mainPanel.add(addPlayerInfoInput());
-
-        mainPanel.add(addPlayerType());
-
-        mainPanel.add(addNote());
-
-        mainPanel.add(addResetAndSubmitBotton());
-
-        add(mainPanel, BorderLayout.SOUTH); // Add the main panel to the JFrame
+        super.addComponents();
     }
 
     public static void createAndShowGUI() {

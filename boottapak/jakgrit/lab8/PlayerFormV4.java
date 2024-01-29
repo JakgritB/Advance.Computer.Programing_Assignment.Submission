@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class PlayerFormV4 extends PlayerFormV3 {
+    protected JLabel hobbiesLabel;
+    protected JCheckBox hobbiesCheckBox;
 
     protected PlayerFormV4(String title) {
         super(title);
@@ -11,22 +13,11 @@ public class PlayerFormV4 extends PlayerFormV3 {
 
     @Override
     protected void addComponents() {
-        mainPanel.setLayout(new BoxLayout(mainPanel, BoxLayout.PAGE_AXIS));
-
-        mainPanel.add(addPlayerInfoInput());
-
-        mainPanel.add(addPlayerType());
-
-        mainPanel.add(addNote());
-
-        mainPanel.add(addResetAndSubmitBotton());
-
-        add(mainPanel, BorderLayout.SOUTH); // Add the main panel to the JFrame
         super.addComponents();
     }
 
     public static void createAndShowGUI() {
-        PlayerFormV3 msw = new PlayerFormV3("Player Form V3");
+        PlayerFormV4 msw = new PlayerFormV4("Player Form V4");
         msw.addMenus();
         msw.addComponents();
         msw.setFrameFeatures();

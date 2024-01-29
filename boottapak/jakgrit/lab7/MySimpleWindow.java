@@ -38,7 +38,7 @@ public class MySimpleWindow extends JFrame {
     }
 
     protected void addComponents() {
-        mainPanel.add(addResetAndSubmitBotton());
+        mainPanel.add(addResetAndSubmitBotton(), 0);
 
         mainPanel.setLayout(new FlowLayout(0, 60, 0));
 
