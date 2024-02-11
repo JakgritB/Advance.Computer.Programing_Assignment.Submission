@@ -1,11 +1,29 @@
 package boottapak.jakgrit.lab8;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
+
+/*  This program is PlayerFormV5 that extends PlayerFormV4. 
+ *  
+ *  the title is "Player Form V5"
+ *  this program creating a window has components:
+ *  - componets is similar to PlayerFormV4
+ *  
+ *  but this program has add new components:
+ *      - Football Image
+ * 
+ *  and has add icon image to:
+ *      - New menu
+ *      - Open menu
+ *      - Save menu
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
 
 public class PlayerFormV5 extends PlayerFormV4 {
     protected ImageIcon newImgIcon, openImgIcon, saveImgIcon;
-    protected static String footballImgPath = "boottapak\\jakgrit\\lab8\\images\\Football.png";
+    protected static String FOOTBALL_IMG_PATH = "boottapak\\jakgrit\\lab8\\images\\Football.png";
     protected JPanel footballPanel;
 
     protected PlayerFormV5(String title) {
@@ -23,12 +41,10 @@ public class PlayerFormV5 extends PlayerFormV4 {
     }
 
     protected JPanel addFootballImg() {
-        ReadImage footballImg = new ReadImage(footballImgPath);
-        footballPanel = new JPanel();
-        footballImg.setBorder(new EmptyBorder(0, 0, 225, 400));
-        footballPanel.add(footballImg);
+        ReadImage footballImg = new ReadImage(FOOTBALL_IMG_PATH);
+        // use ReadImage class to read picture file
 
-        return footballPanel;
+        return footballImg;
     }
 
     @Override
@@ -41,7 +57,6 @@ public class PlayerFormV5 extends PlayerFormV4 {
     protected void addComponents() {
         super.addComponents();
         mainPanel.add(addFootballImg(), 6);
-
     }
 
     public static void createAndShowGUI() {

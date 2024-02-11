@@ -5,6 +5,32 @@ import javax.swing.border.EmptyBorder;
 
 import java.awt.*;
 
+/*  This program is PlayerFormV4 that extends PlayerFormV3. 
+ *  
+ *  the title is "Player Form V4"
+ *  this program creating a window has components:
+ *  - componets is similar to PlayerFormV3
+ *  
+ *  but this program has add new components:
+ *  - [Hobbies Checkbox] that has:
+ *      - Reading
+ *      - Browsing
+ *      - Sleeping
+ *      - Traveling
+ *  - [Sport List] that has:
+ *      - Badminton
+ *      - Boxing
+ *      - Football
+ *      - Running
+ *  - [Year of experience in this sport] that has:
+ *      - Min year: 0
+ *      - Max years: 20 
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class PlayerFormV4 extends PlayerFormV3 {
     protected JLabel hobbiesLabel, sportLabel, yearInSportLabel;
     protected JCheckBox readCheckBox, browsCheckBox, sleepCheckBox, travelCheckBox;
@@ -40,10 +66,10 @@ public class PlayerFormV4 extends PlayerFormV3 {
     protected JPanel addSportList() {
         sportLabel = new JLabel("Sport :");
         sportList = new JList<>(sport);
-        sportList.setSelectedIndex(2);
+        sportList.setSelectedIndex(2); // Selected item is in index 2
 
         sportPanel = new JPanel();
-        sportPanel.setLayout(new GridLayout(1, 2));
+        sportPanel.setLayout(new GridLayout(1, 2)); // row:1, cols:2
         sportPanel.add(sportLabel);
         sportPanel.add(sportList);
 
@@ -57,13 +83,15 @@ public class PlayerFormV4 extends PlayerFormV3 {
         yearInSportLabelPanel.setLayout(new GridLayout(1, 2));
         yearInSportLabelPanel.add(yearInSportLabel);
         yearInSportLabelPanel.setBorder(new EmptyBorder(5, 0, 10, 0));
+        // new EmptyBorder(top:5, left:0, bottom:10, right:0)
 
         yearInSportSlider = new JSlider(JSlider.HORIZONTAL, 0, 20, 0);
+        // (JSlider.HORIZONTAL, minValue:0, maxValue:20, selectedValue:0)
         yearInSportSlider.setBorder(new EmptyBorder(0, 10, 0, 10));
-        yearInSportSlider.setMinorTickSpacing(1);
-        yearInSportSlider.setMajorTickSpacing(5);
-        yearInSportSlider.setPaintTicks(true);
-        yearInSportSlider.setPaintLabels(true);
+        yearInSportSlider.setMinorTickSpacing(1); // small lines 1 space apart
+        yearInSportSlider.setMajorTickSpacing(5); // big lines 5 space apart
+        yearInSportSlider.setPaintTicks(true); // show lines
+        yearInSportSlider.setPaintLabels(true); // show number
 
         yearInSportPanel = new JPanel();
         yearInSportPanel.setLayout(new BoxLayout(yearInSportPanel, BoxLayout.PAGE_AXIS));
@@ -76,6 +104,7 @@ public class PlayerFormV4 extends PlayerFormV3 {
     @Override
     protected void addComponents() {
         super.addComponents();
+
         mainPanel.add(addHobbies(), 2);
         mainPanel.add(addSportList(), 3);
         mainPanel.add(addYearInSport(), 4);

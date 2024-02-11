@@ -4,6 +4,27 @@ import boottapak.jakgrit.lab7.PlayerFormV2;
 
 import javax.swing.*;
 
+/*  This program is PlayerFormV3 that extends PlayerFormV2. 
+ *  
+ *  the title is "Player Form V3"
+ *  this program creating a window has components:
+ *  - componets is similar to PlayerFormV2
+ *  
+ *  but this program has add new menus:
+ *  - File menu: (its menu items =>)
+ *      - New menu item
+ *      - Open menu item
+ *      - Save menu item
+ *      - Exit menu item
+ *  - Config menu: (its menu =>)
+ *      - Color menu (its menu items =>): Red, Green, Blue;
+ *      - Size menu (it menu items =>): 16, 20, 24;
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class PlayerFormV3 extends PlayerFormV2 {
     protected JMenuBar menuBar;
     protected JMenu fileMenu, configMenu;
@@ -22,7 +43,7 @@ public class PlayerFormV3 extends PlayerFormV2 {
         fileMenu.add(newMenuItem = new JMenuItem("New"));
         fileMenu.add(openMenuItem = new JMenuItem("Open"));
         fileMenu.add(saveMenuItem = new JMenuItem("Save"));
-        fileMenu.addSeparator();
+        fileMenu.addSeparator(); // it's ---- (line) between menu item
         fileMenu.add(exitMenuItem = new JMenuItem("Exit"));
 
         return fileMenu;
@@ -48,15 +69,15 @@ public class PlayerFormV3 extends PlayerFormV2 {
     protected void addMenus() {
         menuBar = new JMenuBar();
 
-        menuBar.add(addFileMenu(), 0);
-        menuBar.add(addConfigMenu(), 1);
+        menuBar.add(addFileMenu(), 0);// Add the File menu at index 0
+        menuBar.add(addConfigMenu(), 1); // Add the Config menu at index 1
 
-        setJMenuBar(menuBar);
+        setJMenuBar(menuBar); // Set the created JMenuBar for the form
     }
 
     public static void createAndShowGUI() {
         PlayerFormV3 msw = new PlayerFormV3("Player Form V3");
-        msw.addMenus();
+        msw.addMenus(); // new added method
         msw.addComponents();
         msw.setFrameFeatures();
     }
