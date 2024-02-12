@@ -55,33 +55,40 @@ public class DiceImageCanvas extends JPanel {
     protected void drawDiceNumber() {
         g2d.setPaint(Color.RED);
         // depending on a dice number, place red dots properly on a rectangle
-        if (diceNumber == 1) {
-            g2d.fill(circleCenter);
-        } else if (diceNumber == 2) {
-            g2d.fill(circleBottomLeft);
-            g2d.fill(circleTopRight);
-        } else if (diceNumber == 3) {
-            g2d.fill(circleBottomLeft);
-            g2d.fill(circleTopRight);
-            g2d.fill(circleCenter);
-        } else if (diceNumber == 4) {
-            g2d.fill(circleBottomLeft);
-            g2d.fill(circleTopRight);
-            g2d.fill(circleTopLeft);
-            g2d.fill(circleBottomRight);
-        } else if (diceNumber == 5) {
-            g2d.fill(circleBottomLeft);
-            g2d.fill(circleTopRight);
-            g2d.fill(circleTopLeft);
-            g2d.fill(circleBottomRight);
-            g2d.fill(circleCenter);
-        } else if (diceNumber == 6) {
-            g2d.fill(circleBottomLeft);
-            g2d.fill(circleTopRight);
-            g2d.fill(circleTopLeft);
-            g2d.fill(circleBottomRight);
-            g2d.fill(circleTopCenter);
-            g2d.fill(circleBottomCenter);
+        switch (diceNumber) {
+            case 1:
+                g2d.fill(circleCenter);
+                break;
+            case 2:
+                g2d.fill(circleBottomLeft);
+                g2d.fill(circleTopRight);
+                break;
+            case 3:
+                g2d.fill(circleBottomLeft);
+                g2d.fill(circleTopRight);
+                g2d.fill(circleCenter);
+                break;
+            case 4:
+                g2d.fill(circleBottomLeft);
+                g2d.fill(circleTopRight);
+                g2d.fill(circleTopLeft);
+                g2d.fill(circleBottomRight);
+                break;
+            case 5:
+                g2d.fill(circleBottomLeft);
+                g2d.fill(circleTopRight);
+                g2d.fill(circleTopLeft);
+                g2d.fill(circleBottomRight);
+                g2d.fill(circleCenter);
+                break;
+            case 6:
+                g2d.fill(circleBottomLeft);
+                g2d.fill(circleTopRight);
+                g2d.fill(circleTopLeft);
+                g2d.fill(circleBottomRight);
+                g2d.fill(circleTopCenter);
+                g2d.fill(circleBottomCenter);
+                break;
         }
     }
 
