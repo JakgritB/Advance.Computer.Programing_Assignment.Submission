@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DiceGameWindow",
+            "request": "launch",
+            "mainClass": "boottapak.jakgrit.lab9.DiceGameWindow",
+            "projectName": "jakgrit-1119-java-labs_d5117a2b"
+        },
+        {
+            "type": "java",
             "name": "PlayerFormV5",
             "request": "launch",
             "mainClass": "boottapak.jakgrit.lab8.PlayerFormV5",

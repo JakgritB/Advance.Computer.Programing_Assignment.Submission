@@ -23,7 +23,7 @@ import javax.swing.*;
 
 public class PlayerFormV5 extends PlayerFormV4 {
     protected ImageIcon newImgIcon, openImgIcon, saveImgIcon;
-    protected static String FOOTBALL_IMG_PATH = "boottapak\\jakgrit\\lab8\\images\\Football.png";
+    protected static String FOOTBALL_IMG_PATH = "boottapak\\jakgrit\\images\\Football.png";
     protected JPanel footballPanel;
 
     protected PlayerFormV5(String title) {
@@ -31,9 +31,9 @@ public class PlayerFormV5 extends PlayerFormV4 {
     }
 
     protected void setIcon() {
-        newImgIcon = new ImageIcon("boottapak\\jakgrit\\lab8\\images\\New-icon.png");
-        openImgIcon = new ImageIcon("boottapak\\jakgrit\\lab8\\images\\Open-icon.png");
-        saveImgIcon = new ImageIcon("boottapak\\jakgrit\\lab8\\images\\Save-icon.png");
+        newImgIcon = new ImageIcon("boottapak\\jakgrit\\images\\New-icon.png");
+        openImgIcon = new ImageIcon("boottapak\\jakgrit\\images\\Open-icon.png");
+        saveImgIcon = new ImageIcon("boottapak\\jakgrit\\images\\Save-icon.png");
 
         newMenuItem.setIcon(newImgIcon);
         openMenuItem.setIcon(openImgIcon);
