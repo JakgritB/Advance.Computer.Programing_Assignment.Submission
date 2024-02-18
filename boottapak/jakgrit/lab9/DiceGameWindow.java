@@ -4,6 +4,19 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
+/*  This program is DiceGameWindow that extends JFrame. 
+ *  
+ *  the title is "DiceGameWindow Version 1"
+ *  this program creating a window has components:
+ *  - Random number drawing dice
+ * 
+ *  Dice is create by Class DiceImageCanvas
+ * 
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class DiceGameWindow extends JFrame {
     protected DiceImageCanvas diceImageCanvas;
     protected int diceRoll;
@@ -13,8 +26,8 @@ public class DiceGameWindow extends JFrame {
     public DiceGameWindow(String title) {
         super(title);
         Random rand = new Random();
-        diceRoll = rand.nextInt(6) + 1;
-        diceImageCanvas = new DiceImageCanvas(diceRoll);
+        diceRoll = rand.nextInt(6) + 1; // random number 1-6
+        diceImageCanvas = new DiceImageCanvas(diceRoll); // draw dice
     }
 
     public void setFrameFeatures() {

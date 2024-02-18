@@ -5,6 +5,21 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Rectangle2D;
 
+/*  This program is "DiceImageCanvas" that extends "JPanel"
+ *  It used for drawing dice
+ *  by paintComponent method
+ *  
+ *  first it will initilize cicle position, squre dimension, 
+ *      canvas dimnsion, circle dimension.
+ * 
+ *  and draw dice by random number
+ *  when call this class
+ *  
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class DiceImageCanvas extends JPanel {
     protected int diceNumber;
     protected Graphics2D g2d;
