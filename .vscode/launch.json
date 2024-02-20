@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ColorChooserTest",
+            "request": "launch",
+            "mainClass": "boottapak.jakgrit.lab10.ColorChooserTest",
+            "projectName": "jakgrit-1119-java-labs_d5117a2b"
+        },
+        {
+            "type": "java",
+            "name": "PlayerFormV11",
+            "request": "launch",
+            "mainClass": "boottapak.jakgrit.lab10.PlayerFormV11",
+            "projectName": "jakgrit-1119-java-labs_d5117a2b"
+        },
+        {
+            "type": "java",
             "name": "PlayerFormV10",
             "request": "launch",
             "mainClass": "boottapak.jakgrit.lab10.PlayerFormV10",
