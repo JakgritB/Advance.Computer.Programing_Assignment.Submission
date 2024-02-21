@@ -101,6 +101,20 @@ public class PlayerFormV11 extends PlayerFormV10 {
         setTextFieldColor(chosenColor); // this will call method in "V10" to set text field color
     }
 
+    @Override
+    protected void handleFileMenu(JMenuItem src) {
+        if (src == openMenuItem) {
+            // this line have no code, because don't want to show message when click open menu
+            // to bypass to show file chooser to open file
+        } else if (src == saveMenuItem) {
+            // this line have no code, because don't want to show message when click save menu
+            // to bypass to show file chooser to save file
+        } else {
+            JOptionPane.showMessageDialog(this, "You click menu " + src.getName());
+            //when click another menu, it will show message
+        }
+    }
+
     protected void enableKeyboard() {
         // this is when File menu slide down
         fileMenu.setMnemonic(KeyEvent.VK_F); // Alt + F key or F key
