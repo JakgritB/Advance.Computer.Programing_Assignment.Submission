@@ -27,12 +27,12 @@ package boottapak.jakgrit.lab10;
  *              - New menu: Ctrl + N key
  *              - Open menu: Ctrl + O key
  *              - Save menu: Ctrl + S key
- *              - Exit menu: Ctrl + X key
+ *              - Exit menu: Ctrl + Q key
  *      - When File menu slide down:
  *              - New menu: N key
  *              - Open menu: O key
  *              - Save menu: S key
- *              - Exit menu: X key
+ *              - Exit menu: Q key
  * 
  *  Author: Jakgrit Boottapak
  *  ID: 663040111-9
@@ -121,13 +121,13 @@ public class PlayerFormV11 extends PlayerFormV10 {
         newMenuItem.setMnemonic(KeyEvent.VK_N); // N key
         openMenuItem.setMnemonic(KeyEvent.VK_O); // O key
         saveMenuItem.setMnemonic(KeyEvent.VK_S); // S key
-        exitMenuItem.setMnemonic(KeyEvent.VK_X); // X key
+        exitMenuItem.setMnemonic(KeyEvent.VK_Q); // Q key
 
         // this is when in the main page
         newMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N, ActionEvent.CTRL_MASK)); // Ctrl + N key
         openMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O, ActionEvent.CTRL_MASK)); // Ctrl + O key
         saveMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, ActionEvent.CTRL_MASK)); // Ctrl + S key
-        exitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK)); // Ctrl + X key
+        exitMenuItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, ActionEvent.CTRL_MASK)); // Ctrl + Q key
     }
 
     @Override
