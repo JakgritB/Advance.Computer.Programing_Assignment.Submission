@@ -32,8 +32,9 @@ import boottapak.jakgrit.lab8.PlayerFormV5;
  */
 
 public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
-    String getName, getNation, getBirth, getGender, getHobbies, getPlayerType;
-    List<String> getSport;
+    protected String getName, getNation, getBirth, getGender, getHobbies, getPlayerType;
+    protected String submitText;
+    protected List<String> getSport;
 
     protected PlayerFormV6(String title) {
         super(title);
@@ -56,12 +57,12 @@ public class PlayerFormV6 extends PlayerFormV5 implements ActionListener {
         if (getName.isEmpty() || getNation.isEmpty() || getBirth.isEmpty()) { // check if it empty or not
             JOptionPane.showMessageDialog(this, "You have not filled in all the required information.");
         } else {
-            String text = getName + " has nationality as " + getNation
+            submitText = getName + " has nationality as " + getNation
                     + " and was born on " + getBirth
                     + ", has gender as " + getGender
                     + ", is a " + getPlayerType + " player, has hobbies as " + getHobbies
                     + " and plays " + getSport;
-            JOptionPane.showMessageDialog(this, text);
+            JOptionPane.showMessageDialog(this, submitText);
         }
     }
 

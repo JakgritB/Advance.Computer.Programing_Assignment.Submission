@@ -14,27 +14,29 @@ public class PlayerFormV12 extends PlayerFormV11 {
 
     @Override
     protected void handleTextField(JTextField src) {
-        if (src == nameTxtField && src.getText().isEmpty()) {
-            handleEmptyTextField(src, nameTxtField, nationTxtField);
+        if (src == nameTxtField) {
+            handleNormalTextField(src, nationTxtField, nationTxtField);
 
-        } else if (src == nationTxtField && src.getText().isEmpty()) {
-            handleEmptyTextField(src, nationTxtField, birthTxtField);
+        } else if (src == nationTxtField) {
+            handleNormalTextField(src, birthTxtField, birthTxtField);
 
         } else if (src == birthTxtField) {
             handleDateTextField(src);
-
-        } else {
-            nationTxtField.setEnabled(true);
-            birthTxtField.setEnabled(true);
-            super.handleTextField(src);
+            
         }
     }
 
-    protected void handleEmptyTextField(JTextField textFieldName, JTextField focusTextField,
-            JTextField noEnableTextField) {
-        JOptionPane.showMessageDialog(this, "Please enter some data in " + textFieldName.getName());
-        focusTextField.requestFocusInWindow();
-        noEnableTextField.setEnabled(false);
+    protected void handleNormalTextField(JTextField textFieldName, JTextField focusTextField,
+            JTextField setEnablTextField) {
+        if (textFieldName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter some data in " + textFieldName.getName());
+            setEnablTextField.setEnabled(false);
+
+        } else if (!textFieldName.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, textFieldName.getName() + " is changed to " + textFieldName.getText());
+            setEnablTextField.setEnabled(true);
+            focusTextField.requestFocusInWindow();
+        }
     }
 
     protected void handleDateTextField(JTextField src) {

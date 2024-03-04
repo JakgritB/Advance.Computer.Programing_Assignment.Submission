@@ -48,6 +48,7 @@ public class PlayerFormV11 extends PlayerFormV10 {
     protected JMenuItem customColorMenuItem;
     protected JFileChooser fileChooser; // this is fileChooser window
     protected Color chosenColor; // this variable will keep color that user select in color chooser
+    protected File file;
 
     protected PlayerFormV11(String title) {
         super(title);
@@ -84,7 +85,7 @@ public class PlayerFormV11 extends PlayerFormV10 {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             // if user chosen file // if user don't choose any file, will not do this code
 
-            File file = fileChooser.getSelectedFile(); // get selected file from file chooser
+            file = fileChooser.getSelectedFile(); // get selected file from file chooser
             JOptionPane.showMessageDialog(this, string + file.getAbsolutePath()); // show path of file
         }
     }
