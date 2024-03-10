@@ -43,7 +43,7 @@ public class PlayerFormV8 extends PlayerFormV7 implements ListSelectionListener 
             if (numSelected == 1) {
                 JOptionPane.showMessageDialog(this, "Selected sport is " + sportOutput);
                 // when user click only one list
-            } else {
+            } else if (numSelected > 1){
                 JOptionPane.showMessageDialog(this, "Selected sports are " + sportOutput);
                 // when user click many lists
             }

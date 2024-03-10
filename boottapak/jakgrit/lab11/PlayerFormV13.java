@@ -4,6 +4,7 @@ import java.io.*;
 import javax.swing.*;
 
 public class PlayerFormV13 extends PlayerFormV12 {
+    String playerInfoText;
     StringBuffer readDataText;
 
     protected PlayerFormV13(String title) {
@@ -14,25 +15,34 @@ public class PlayerFormV13 extends PlayerFormV12 {
     protected void handleFileChooser(int openOrSave, String string) {
         super.handleFileChooser(openOrSave, string);
         if (string.equals("Opening file ")) {
-            readFile();
+            handleOpenFile();
         } else if (string.equals("Saving in file ")) {
-            writeFile();
+            handleSaveFile();
         }
+    }
+
+    protected void handleOpenFile() {
+        readFile();
+    }
+
+    protected void handleSaveFile() {
+        setPlayerInfoText();
+        writeFile();
+    }
+
+    protected void setPlayerInfoText() {
+        getTextAndOther();
+        playerInfoText = getName + " has nationality as " + getNation
+                + " and was born on " + getBirth
+                + ", has gender as " + getGender
+                + ", is a " + getPlayerType + " player, has hobbies as " + getHobbies
+                + " and plays " + getSport;
     }
 
     protected void writeFile() {
         try {
             PrintWriter printWriter = new PrintWriter(file);
-
-            getTextAndOther();
-            String text = getName + " has nationality as " + getNation
-                    + " and was born on " + getBirth
-                    + ", has gender as " + getGender
-                    + ", is a " + getPlayerType + " player, has hobbies as " + getHobbies
-                    + " and plays " + getSport;
-
-            printWriter.println(text);
-
+            printWriter.println(playerInfoText);
             printWriter.close();
         } catch (IOException io) {
             JOptionPane.showMessageDialog(this, "Fail to save file");
@@ -61,7 +71,7 @@ public class PlayerFormV13 extends PlayerFormV12 {
         } catch (IOException io) {
             JOptionPane.showMessageDialog(this, "Fail to open file");
         } catch (NullPointerException n) {
-            
+
         }
     }
 
