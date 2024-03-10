@@ -3,6 +3,16 @@ package boottapak.jakgrit.lab11;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/*  This program defines the "Player" class, which implements the Serializable interface.
+ *  It represents a player with various attributes 
+ *  such as name, nationality, date of birth, player type, gender, hobbies, sports, and years in sport.
+ * 
+ *  
+ *  Author: Jakgrit Boottapak
+ *  ID: 663040111-9
+ *  Sec: 1
+ */
+
 public class Player implements Serializable {
     private static final long serialVersionUID = -3722985238703521524L;
 
@@ -10,6 +20,7 @@ public class Player implements Serializable {
     private ArrayList<String> hobbies, sports;
     private int year;
 
+    // Constructor to initialize player object with given attributes
     public Player(String name, String nationality, String dob, String playerType, String gender,
             ArrayList<String> hobbies, ArrayList<String> sports, int year) {
         this.name = name;
@@ -88,9 +99,11 @@ public class Player implements Serializable {
         this.year = year;
     }
 
+    /// this is toString() method for test
     @Override
     public String toString() {
-        return "name:" + getName() + " nation:" + getNationality() + " dob:" + getDob() + " playerType:" + getPlayerType() + 
-        " gender:" + getGender() + " hobbies:" + getHobbies() + " sport:" + getSports() + " year:" + getYear();
+        return "name:" + getName() + " nation:" + getNationality() + " dob:" + getDob() + " playerType:"
+                + getPlayerType() +
+                " gender:" + getGender() + " hobbies:" + getHobbies() + " sport:" + getSports() + " year:" + getYear();
     }
 }
